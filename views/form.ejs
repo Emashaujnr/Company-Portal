@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        
+            input[type=text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+        
+    </style>
+</head>
+<h1>Benefitiary Registration</h1>
+  <table border="1">
+        <tr><th>Main member Entry Date</th><th>First Name</th><th>Last Name</th><th>Funeral Plan</th></tr>
+
+<% for (var i = 0; i < mainclients.length; i++) { %> 
+        <tr><td><%= mainclients[i].date %> </td><td><%= mainclients[i].mainmemberfirstname %> </td><td><%= mainclients[i].mainmemberlastname %> </td><td><%= mainclients[i].funeralplan %> </td></tr>
+<%}%>      
+    </table>
+<body>
+    <form action="addbenform" method="post">
+        <input type="text" name="firstname" placeholder="First Name" /><br />
+        <input type="text" name="lastname" placeholder="Last Name" /><br />
+        <input type="text" name="relationship" placeholder="Relationship"/><br />
+        <input type="text" name="benefitiaryid" placeholder="Benefitiary ID" /><br />
+        <input type="submit" value="Save Benefitiary" />
+    </form>
+</body>
+
+
+
+
+</html>
